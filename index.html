@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Feliz Cumpleaños ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:'Poppins', sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+        url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:800px;
+    padding:50px;
+    border-radius:30px;
+    backdrop-filter: blur(12px);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    text-align:center;
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:5rem;
+    margin-bottom:20px;
+    color:#ffd6e7;
+}
+
+.subtitle{
+    font-size:1.2rem;
+    opacity:0.9;
+    margin-bottom:35px;
+}
+
+.message{
+    font-size:1rem;
+    line-height:1.9;
+    text-align:left;
+    max-height:300px;
+    overflow:auto;
+    padding-right:10px;
+}
+
+.message::-webkit-scrollbar{
+    width:6px;
+}
+
+.message::-webkit-scrollbar-thumb{
+    background:#ffffff55;
+    border-radius:10px;
+}
+
+.heart{
+    position:absolute;
+    color:#ffb6c1;
+    font-size:20px;
+    animation:float linear infinite;
+    opacity:.7;
+}
+
+.music-btn{
+    margin-top:30px;
+    padding:14px 28px;
+    border:none;
+    border-radius:40px;
+    background:#ffffff22;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+    backdrop-filter: blur(10px);
+}
+
+.music-btn:hover{
+    transform:scale(1.05);
+    background:#ffffff33;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh) scale(0.5);
+    }
+    to{
+        transform:translateY(-10vh) scale(1.2);
+    }
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:3.2rem;
+    }
+
+    .container{
+        padding:30px;
+    }
+
+    .message{
+        font-size:.95rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Feliz Cumpleaños ❤️</h1>
+
+    <p class="subtitle">
+        Para la persona más especial de mi vida
+    </p>
+
+    <div class="message">
+        Mi amor,
+        <br><br>
+
+        Hoy quiero escribirte algo más grande que un simple “feliz cumpleaños”, porque sinceramente siento que las palabras se quedan cortas para explicar lo importante que eres para mí.
+
+        <br><br>
+
+        Desde que llegaste a mi vida, muchas cosas cambiaron. Cambió mi manera de ver los días, de entender el amor, de imaginar el futuro. Contigo aprendí que sentirse en casa no depende de un lugar, sino de una persona… y tú te convertiste en eso para mí.
+
+        <br><br>
+
+        Gracias por existir.
+        Gracias por elegirme.
+        Gracias por compartir tu vida conmigo.
+
+        <br><br>
+
+        Deseo que este nuevo año de vida te traiga paz, sueños cumplidos, tranquilidad y muchísimas razones para sonreír.
+
+        <br><br>
+
+        Y aunque probablemente nunca encuentre las palabras perfectas para describir lo que siento, sí puedo prometerte algo:
+        voy a seguir intentando hacerte feliz todos los días que la vida me permita estar a tu lado.
+
+        <br><br>
+
+        Feliz cumpleaños, mi amor.
+        ❤️
+    </div>
+
+    <button class="music-btn" onclick="toggleMusic()">
+        🎵 Reproducir Música
+    </button>
+
+</div>
+
+<audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const music = document.getElementById("music");
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+        event.target.innerHTML = "⏸ Pausar Música";
+    }else{
+        music.pause();
+        event.target.innerHTML = "🎵 Reproducir Música";
+    }
+}
+
+for(let i=0;i<25;i++){
+
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random()*100+"vw";
+    heart.style.animationDuration = (Math.random()*6+4)+"s";
+    heart.style.fontSize = (Math.random()*20+10)+"px";
+
+    document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
