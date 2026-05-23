@@ -184,7 +184,7 @@ h1{
     id="youtube-player"
     width="0"
     height="0"
-    src="https://www.youtube.com/embed/H3OiQEOcrA8?si=JwHSlq3spP86pkFe&t=1"
+    src="https://www.youtube.com/embed/H3OiQEOcrA8?autoplay=0&loop=1&playlist=H3OiQEOcrA8"
     frameborder="0"
     allow="autoplay"
 >
@@ -199,8 +199,8 @@ function toggleMusic(){
     const iframe = document.getElementById("youtube-player");
 
     if(!playing){
-        
-        iframe.src = "https://www.youtube.com/embed/H3OiQEOcrA8?si=JwHSlq3spP86pkFe&t=1";
+
+        iframe.src = "https://www.youtube.com/embed/H3OiQEOcrA8?autoplay=1&loop=1&playlist=H3OiQEOcrA8";
 
         event.target.innerHTML = "⏸ Música Reproduciendo";
         playing = true;
@@ -209,7 +209,7 @@ function toggleMusic(){
 
         iframe.src = "";
 
-        event.target.innerHTML = "♪♪ Toca aquí antes de leer ♪♫";
+        event.target.innerHTML = "🎵 Toca aquí antes de leer";
         playing = false;
     }
 }
