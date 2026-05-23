@@ -184,7 +184,7 @@ h1{
     id="youtube-player"
     width="0"
     height="0"
-    src="https://youtu.be/H3OiQEOcrA8?si=8mrAm6AZ39Y17xiz"
+    src="https://www.youtube.com/embed/H3OiQEOcrA8?si=JwHSlq3spP86pkFe&t=1"
     frameborder="0"
     allow="autoplay"
 >
@@ -199,8 +199,8 @@ function toggleMusic(){
     const iframe = document.getElementById("youtube-player");
 
     if(!playing){
-
-        iframe.src = "https://www.youtube.com/embed/TdrL3QxjyVw?autoplay=1&loop=1&playlist=TdrL3QxjyVw";
+        
+        iframe.src = "https://www.youtube.com/embed/H3OiQEOcrA8?si=JwHSlq3spP86pkFe&t=1";
 
         event.target.innerHTML = "⏸ Música Reproduciendo";
         playing = true;
